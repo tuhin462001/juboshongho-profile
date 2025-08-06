@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বাংলাদেশ আহলেহাদীছ যুবসংঘ - কেন্দ্রীয় দায়িত্বশীলদের তথ্য</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 15px;
+            color: #333;
+            min-width: 320px;
+        }
+        
+        .header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 25px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 1;
+        }
+        
+        .logo-container {
+            flex: 0 0 120px;
+            z-index: 2;
+            margin-right: 15px;
+        }
+        
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
+        }
+        
+        .header-text {
+            flex: 1;
+            padding-left: 15px;
+            z-index: 2;
+        }
+        
+        .header-text h1 {
+            color: #2c3e50;
+            margin: 0 0 8px 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        
+        .header-text p {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-header {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+        
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.3;
+        }
+        
+        .card-header p {
+            margin: 3px 0 0;
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+        
+        .card-body {
+            padding: 15px;
+        }
+        
+        .contact-info {
+            margin-bottom: 12px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+            color: #7f8c8d;
+            width: 18px;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+        
+        .whatsapp-link {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all;
+        }
+        
+        .facebook-link, .page-link {
+            color: #1877F2;
+            text-decoration: none;
+            font-weight: bold;
+            word-break: break-all;
+        }
+        
+        .page-link {
+            color: #E1306C;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            
+            .header::before {
+                width: 100%;
+                height: 30%;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+            }
+            
+            .logo-container {
+                flex: 0 0 auto;
+                margin: 0 auto 15px;
+                max-width: 150px;
+            }
+            
+            .header-text {
+                padding-left: 0;
+            }
+            
+            .header-text h1 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+            
+            .header-text p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .header-text p {
+                font-size: 1rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-header h2 {
+                font-size: 1rem;
+            }
+            
+            .contact-item {
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 350px) {
+            .header-text h1 {
+                font-size: 1.2rem;
+            }
+            
+            .header-text p {
+                font-size: 0.9rem;
+            }
+            
+            .logo-container {
+                max-width: 120px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="https://drive.google.com/thumbnail?id=1U45HEbieEm4pDC_wRuwtPjRy_WpSyLI0&sz=w1200" alt="যুব সংঘ লোগো">
+        </div>
+        <div class="header-text">
+            <h1>বাংলাদেশ আহলেহাদীছ যুবসংঘ</h1>
+            <p>কেন্দ্রীয় দায়িত্বশীলদের যোগাযোগ তথ্য</p>
+        </div>
+    </div>
+    
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>শরীফুল ইসলাম মাদানী</h2>
+                <p>সভাপতি</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801744456036" class="whatsapp-link">01744-456036</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/shaikhshariful.islammadani" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-link"></i>
+                        <a href="https://www.facebook.com/Shaikh.Md.Shariful.Islam.Madani" class="page-link">ফেসবুক পেইজ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>আবুল কালাম</h2>
+                <p>সহ সভাপতি</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801745504638" class="whatsapp-link">01745-504638</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/abul.kalam.924506" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-link"></i>
+                        <a href="https://www.facebook.com/Abul.Kalam.Bin.Ahmad" class="page-link">ফেসবুক পেইজ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>ফায়ছাল মাহমূদ</h2>
+                <p>সাধারণ সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801738773838" class="whatsapp-link">01738-773838</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/faisal.mahmud.279798" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>আহমাদুল্লাহ</h2>
+                <p>সাংগঠনিক সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801940564388" class="whatsapp-link">019-405-64388</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/ahammad.ullah.820664" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 5 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>আসাদুল্লাহ আল-গালিব</h2>
+                <p>অর্থ সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801774585794" class="whatsapp-link">01774-585794</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <span>ফেসবুক প্রোফাইল নেই</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 6 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>আব্দুন নূর</h2>
+                <p>প্রচার সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801717506865" class="whatsapp-link">01717-506865</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/rocky.mnrs1" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-link"></i>
+                        <a href="https://www.facebook.com/abdunnurbd" class="page-link">ফেসবুক পেইজ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 7 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>আব্দুর রঊফ</h2>
+                <p>প্রশিক্ষণ সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801723688443" class="whatsapp-link">01723-688443</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/muhammad.abdur.rauf.385775" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 8 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>আব্দুল্লাহ আল-মারূফ</h2>
+                <p>ছাত্র বিষয়ক সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801774560730" class="whatsapp-link">01774-560730</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/profile.php?id=100010776979274" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 9 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>যয়নূল আবেদীন</h2>
+                <p>তথ্য ও প্রকাশন সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801515694148" class="whatsapp-link">01515-694148</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/joynul.abedin.429503" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 10 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>রাক্বীবুল ইসলাম</h2>
+                <p>সাহিত্য ও প্রকাশনা বিষয়ক সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801788123473" class="whatsapp-link">01788-123473</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/rokibulislam.chanchal.9" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 11 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>সাজিদুর রহমান</h2>
+                <p>সমাজ কল্যান সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801300116700" class="whatsapp-link">01300-116700</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/sbsobuj.khan" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Card 12 -->
+        <div class="card">
+            <div class="card-header">
+                <h2>আরাফাত যামান</h2>
+                <p>দফতর সম্পাদক</p>
+            </div>
+            <div class="card-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/8801746130967" class="whatsapp-link">01746-130967</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-facebook"></i>
+                        <a href="https://www.facebook.com/muhammadarafatzaman1" class="facebook-link">ফেসবুক প্রোফাইল</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
